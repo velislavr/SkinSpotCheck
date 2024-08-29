@@ -1,0 +1,5 @@
+# Ignore pickle files
+*.pkl
+
+# Ignore SQLite database files
+*.sqlite3

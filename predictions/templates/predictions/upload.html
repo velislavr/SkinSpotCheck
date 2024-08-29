@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Spot Checker</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'predictions/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-content">
+            <h1><i>Skin Spot Checker</i></h1>
+            <p class="info-paragraph">
+                This tool leverages AI algorithms trained on thousands of medical images to analyze skin spots for potential signs of skin cancer. Skin cancer is the most common form of cancer, but it’s highly treatable when detected early. According to the Skin Cancer Foundation, one in five Americans will develop skin cancer by the age of 70, and early detection can increase the 5-year survival rate for melanoma to 99%.
+            </p>
+            <p class="info-paragraph">
+                This project is designed as a proof of concept, demonstrating a tool that aids in the early detection process by providing an initial assessment based on the image you upload. While this tool is not a substitute for professional medical advice and requires far more data to achieve the necessary accuracy, it serves to prove the concept that regular self-checks, combined with AI assistance, can be a powerful approach to catching skin cancer early and potentially saving lives.
+            </p>
+        </div>
+        <form id="uploadForm" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="imageUpload" class="custom-file-upload">
+                <img src="{% static 'predictions/image_upload_icon.svg' %}" alt="Upload Icon" class="upload-icon">
+                <span id="uploadText" class="upload-text">Click to Upload an Image</span>
+            </label>
+            <input type="file" name="file" id="imageUpload" accept="image/*">
+            <button type="button" id="checkSpotButton" onclick="submitForm()" disabled>Check Spot</button>
+        </form>
+        <div id="result" style="display: none;"></div>
+    </div>
+
+    <script src="{% static 'predictions/scripts.js' %}"></script>
+</body>
+</html>

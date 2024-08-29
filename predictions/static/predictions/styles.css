@@ -1,0 +1,226 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #83a4d4, #597e9e);
+}
+
+/* Container styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Left content styling */
+.left-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.info-paragraph {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    max-width: 400px;
+    width: 100%;
+    margin-top: 20px;
+    align-self: center; /* Center the form horizontally */
+}
+
+/* Hide the default file input */
+input[type="file"] {
+    display: none;
+}
+
+/* Custom file upload button */
+.custom-file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #5A9BF6, #3799e7);
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* SVG icon inside the upload button */
+.custom-file-upload .upload-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    filter: invert(1);
+}
+
+/* Text inside the upload button */
+.custom-file-upload .upload-text {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* General button styling */
+button {
+    background: linear-gradient(135deg, #5A9BF6, #5AB1F6);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Enabled button styling */
+.enabled-button {
+    background: linear-gradient(135deg, #5A9BF6, #5AB1F6); /* Restores gradient background */
+    cursor: pointer;
+    color: white;
+}
+
+/* Disabled button styling */
+button:disabled,
+.disabled-button {
+    background: linear-gradient(135deg, #c2c2c2, #cccccc); /* Gray background for disabled button */
+    cursor: not-allowed; /* Not-allowed cursor */
+    box-shadow: none; /* Remove shadow */
+}
+
+/* Button hover effect when enabled */
+button:hover:enabled {
+    background: linear-gradient(135deg, #5AB1F6, #5A9BF6);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Result container styling */
+#result {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result p {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem;
+}
+
+/* Uploaded image styling */
+#uploadedImage {
+    display: none;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-content {
+        flex: 1;
+        margin-right: 50px;
+        align-self: flex-start; /* Align title and paragraph at the top */
+    }
+
+    form {
+        margin-top: 0;
+        align-self: center; /* Center the form vertically on the screen */
+    }
+
+    h1 {
+        font-size: 3rem;
+        text-align: left;
+    }
+
+    .info-paragraph {
+        text-align: left;
+    }
+
+    #result {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .info-paragraph {
+        font-size: 1rem;
+    }
+
+    form {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 20px;
+    }
+
+    input[type="file"], button {
+        width: 100%;
+    }
+}
